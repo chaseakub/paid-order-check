@@ -1,0 +1,4 @@
+payment_id,order_ref,captured_at,amount,currency,refunded_amount,disputed
+demo-pay-101,order-101,2026-11-17T10:00:00Z,26.00,USD,0,false
+demo-pay-102,order-102,2026-11-17T11:00:00Z,37.00,USD,0,false
+demo-pay-103,order-103,2026-11-17T12:00:00Z,53.00,USD,0,false

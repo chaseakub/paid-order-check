@@ -1,0 +1,30 @@
+name: Free pilot feedback
+description: Ask about a local pilot or report a verified outcome using aggregate information.
+title: "Paid-order pilot"
+body:
+  - type: markdown
+    attributes:
+      value: "This is public. Keep order IDs, payment IDs, exports, screenshots, credentials and customer details on your machine."
+  - type: input
+    id: platform
+    attributes:
+      label: Which store platform and payment processor are involved?
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: How far did you get?
+      options:
+        - I would like to try an audit
+        - I ran the demo
+        - I ran a store audit and need help interpreting it
+        - A human verified a real exception
+        - I ran the audit on a second period
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What would help, or what did the team verify?
+      description: Counts and non-identifying descriptions are enough.
