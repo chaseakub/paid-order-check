@@ -18,6 +18,8 @@ The three synthetic captures include one completed order, one paid but cancelled
 npx skills add chaseakub/paid-order-check --skill paid-order-audit
 ```
 
+The skill also has a [public directory page](https://skills.sh/chaseakub/paid-order-check/paid-order-audit).
+
 Then ask your agent: **“Audit my captured Stripe payments against my WooCommerce orders. Which paid orders were cancelled or are missing?”** The installed skill includes the executable checker, example exports, and the field definitions. The demo works offline after installation.
 
 ## Check a store

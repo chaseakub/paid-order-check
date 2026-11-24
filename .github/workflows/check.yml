@@ -4,7 +4,7 @@ permissions:
   contents: read
 jobs:
   audit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -12,3 +12,12 @@ jobs:
           python-version: '3.9'
       - run: python -m unittest discover -s tests
       - run: python skills/paid-order-audit/scripts/check_orders.py demo
+      - name: Verify project-local agent installation
+        env:
+          DISABLE_TELEMETRY: '1'
+        run: |
+          trial=$(mktemp -d)
+          cd "$trial"
+          git init -q
+          npx --yes skills@1.9.0 add "$GITHUB_WORKSPACE" --skill paid-order-audit --agent codex --copy -y
+          python .agents/skills/paid-order-audit/scripts/check_orders.py demo
