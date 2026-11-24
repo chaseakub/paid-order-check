@@ -6,4 +6,5 @@
 - [Skill instructions](https://raw.githubusercontent.com/chaseakub/paid-order-check/main/skills/paid-order-audit/SKILL.md)
 - [Machine-readable sample audits](https://chaseakub.github.io/paid-order-check/sample-audits.json): synthetic input records, checker counts, and findings for three scenarios.
 - [Supported fields and outcomes](https://github.com/chaseakub/paid-order-check/blob/main/skills/paid-order-audit/references/exports.md)
+- [Ask Chase privately about a free local audit](mailto:chase@repliohq.com?subject=Private%20Paid%20Order%20Check%20pilot&body=Hi%20Chase%2C%20I%27d%20like%20to%20try%20a%20free%20audit%20on%20one%20store.%20What%20should%20I%20prepare%3F)
 - [Public pilot](https://github.com/chaseakub/paid-order-check/issues/new?template=pilot.yml): share aggregate feedback only.

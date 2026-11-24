@@ -42,7 +42,7 @@ Use the timestamp of your snapshots and the store's normal delay in hours. The i
 
 ## Free pilot
 
-Agencies and merchants can run and rerun the audit for free. If you want help interpreting a result, [open a pilot request](https://github.com/chaseakub/paid-order-check/issues/new?template=pilot.yml). Share your platform, whether an exception was confirmed, and whether a second run would help. Keep customer details, merchant exports, and transaction identifiers on your machine.
+Agencies and merchants can run and rerun the audit for free. For help with a first audit or a result, [email Chase about a private pilot](mailto:chase@repliohq.com?subject=Private%20Paid%20Order%20Check%20pilot&body=Hi%20Chase%2C%20I%27d%20like%20to%20try%20a%20free%20audit%20on%20one%20store.%20What%20should%20I%20prepare%3F). Your store platform is enough to get started. You can also [share aggregate feedback publicly on GitHub](https://github.com/chaseakub/paid-order-check/issues/new?template=pilot.yml). Keep customer details, merchant exports, and transaction identifiers on your machine.
 
 ## Why check both sides?
 
