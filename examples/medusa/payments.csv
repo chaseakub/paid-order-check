@@ -1,0 +1,4 @@
+payment_id,order_ref,captured_at,amount,currency,refunded_amount,disputed
+medusa-pay-01,order_101,2026-11-17T10:00:00Z,37.00,USD,0,false
+medusa-pay-02,order_102,2026-11-17T11:00:00Z,53.00,USD,0,false
+medusa-pay-03,order_103,2026-11-17T12:00:00Z,26.00,USD,0,false

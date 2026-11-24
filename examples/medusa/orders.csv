@@ -1,0 +1,3 @@
+order_ref,payment_id,total,currency,status
+order_101,medusa-pay-01,37.00,USD,cancelled
+order_103,medusa-pay-03,26.00,USD,medusa_pending
