@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paid Order Check · Find paid Stripe orders missing from WooCommerce</title>
+<meta name="description" content="Explore a free, read-only Stripe and WooCommerce order audit. Find a paid but cancelled order and a missing order in a three-payment example.">
+<meta property="og:title" content="Paid in Stripe. Cancelled in WooCommerce.">
+<meta property="og:description" content="See which two payments need a second look in a free three-order audit.">
+<meta property="og:image" content="https://chaseakub.github.io/paid-order-check/audit-preview.png">
+<meta property="og:image:alt" content="A synthetic sample audit with one accepted payment, one paid but cancelled order, and one payment missing its order.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://chaseakub.github.io/paid-order-check/">
+<link rel="alternate" type="application/json" href="./sample-audits.json" title="Synthetic inputs and audit reports">
+<style>
+:root{color-scheme:light;--ink:#191919;--muted:#575752;--red:#b61e2b;--line:#d9d6d0;--paper:#faf9f6}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{max-width:1032px;margin:auto;padding:0 30px}header{border-bottom:1px solid var(--line)}
+nav{min-height:62px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:19px;font-weight:730;letter-spacing:-.04em}.brand b{color:var(--red)}a{color:var(--ink);text-underline-offset:3px}a:hover{color:var(--red)}.brand a{text-decoration:none}
+.hero{padding:48px 0 28px}.hero h1{font:normal clamp(38px,6vw,72px)/1.04 Georgia,serif;letter-spacing:-.048em;margin:0 0 16px}.hero h1 span{color:var(--red)}.hero p{max-width:720px;color:var(--muted);margin:0;font-size:18px}
+.audit{background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}.panelhead{padding:18px 22px;display:flex;gap:18px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}h2{font-size:20px;letter-spacing:-.03em;line-height:1.2;margin:0}.scenario{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--muted)}select{font:inherit;color:var(--ink);border:1px solid #b7b4af;border-radius:5px;padding:6px 10px;background:#fff}a:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.report{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr)}.rows{padding:8px 12px}.row{display:grid;grid-template-columns:92px auto 1fr;align-items:center;gap:12px;border:0;border-bottom:1px solid var(--line);background:#fff;border-radius:3px;font:inherit;width:100%;padding:13px 10px;text-align:left;cursor:pointer;color:var(--ink)}.row:last-child{border-bottom-color:transparent}.row:hover{background:#f6f5f2}.row[aria-pressed=true]{background:#f9eeee;box-shadow:inset 3px 0 0 var(--red)}.amount{font-weight:690}.status{font-size:14px;text-align:right}.id{font:14px ui-monospace,monospace}.evidence{background:#f6f5f2;padding:22px 24px;border-left:1px solid var(--line);min-height:198px}.evidence h3{margin:4px 0 7px;font-size:22px;line-height:1.22}.evidence p{margin:4px 0;color:#444}.ref{font:12px ui-monospace,monospace;letter-spacing:.025em;color:var(--muted)}.panelfoot{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:10px 22px;color:var(--muted);font-size:13px}.next{padding:28px 0 40px}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:14px}.button{padding:10px 16px;border:1px solid var(--line);text-decoration:none;background:#fff;border-radius:6px;font-weight:650;font-size:14px}.button.primary{color:white;background:var(--ink);border-color:var(--ink)}.button:hover{outline:1px solid var(--ink)}.next p{margin:7px 0;color:var(--muted)}footer{border-top:1px solid var(--line);padding:15px 0 24px;font-size:13px;color:var(--muted)}footer div{display:flex;gap:18px;flex-wrap:wrap}
+@media(max-width:720px){.wrap{padding:0 17px}.hero{padding:30px 0 22px}.panelhead,.panelfoot{align-items:flex-start;flex-direction:column;gap:8px;padding:14px}.report{grid-template-columns:1fr}.evidence{min-height:0;border-left:0;border-top:1px solid var(--line);padding:16px}.rows{padding:5px 8px}.row{grid-template-columns:85px auto 1fr;gap:8px}.hero p{font-size:16px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav><div class="brand"><a href="./"><b>Replio</b> / Paid Order Check</a></div><a href="https://github.com/chaseakub/paid-order-check">GitHub</a></nav></div></header>
+<main class="wrap">
+<section class="hero"><h1>Paid in Stripe.<br><span>Cancelled in WooCommerce.</span></h1><p>A payment can match to the penny and still leave a customer waiting. See what the free checker finds when it compares three captured payments with the store’s orders.</p></section>
+<section class="audit" aria-label="Interactive sample audit"><div class="panelhead"><h2>Sample audit</h2><label class="scenario">Scenario <select id="scenario"><option value="original">Original exports</option><option value="order_found">Missing order arrives</option><option value="payment_refunded">Cancelled order refunded</option></select></label></div>
+<div class="report"><div class="rows" id="rows" aria-label="Payments"></div><div class="evidence" id="evidence" aria-live="polite"><h3>Loading sample audit…</h3></div></div>
+<div class="panelfoot"><span id="summary" aria-live="polite">Synthetic data · 24-hour grace period</span><a href="./sample-audits.json">View inputs and CLI results</a></div></section>
+<noscript><p>Read the <a href="./sample-audits.json">sample payments, orders and checker results</a>.</p></noscript>
+<section class="next"><h2>Check your own store</h2><p>Run it locally with your saved exports. Your customer records stay on your machine.</p><div class="actions"><a class="button primary" href="https://github.com/chaseakub/paid-order-check#check-a-store">Run a free audit</a><a class="button" href="https://skills.sh/chaseakub/paid-order-check/paid-order-audit">Install the agent skill</a><a href="https://github.com/chaseakub/paid-order-check/issues/new?template=pilot.yml">Join the free pilot</a></div></section>
+</main><footer><div class="wrap"><span>Built by <a href="https://www.repliohq.com/">Replio</a></span><a href="https://github.com/chaseakub/paid-order-check/blob/main/LICENSE">MIT license</a><a href="./llms.txt">Agent guide</a></div></footer>
+<script src="./demo.js" defer></script></body></html>

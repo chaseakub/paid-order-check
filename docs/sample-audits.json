@@ -1,0 +1,221 @@
+{
+  "original": {
+    "payments": [
+      {
+        "payment_id": "demo-pay-101",
+        "order_ref": "order-101",
+        "captured_at": "2026-11-17T10:00:00Z",
+        "amount": "26.00",
+        "currency": "USD",
+        "refunded_amount": "0",
+        "disputed": "false"
+      },
+      {
+        "payment_id": "demo-pay-102",
+        "order_ref": "order-102",
+        "captured_at": "2026-11-17T11:00:00Z",
+        "amount": "37.00",
+        "currency": "USD",
+        "refunded_amount": "0",
+        "disputed": "false"
+      },
+      {
+        "payment_id": "demo-pay-103",
+        "order_ref": "order-103",
+        "captured_at": "2026-11-17T12:00:00Z",
+        "amount": "53.00",
+        "currency": "USD",
+        "refunded_amount": "0",
+        "disputed": "false"
+      }
+    ],
+    "orders": [
+      {
+        "order_ref": "order-101",
+        "payment_id": "demo-pay-101",
+        "total": "26.00",
+        "currency": "USD",
+        "status": "completed"
+      },
+      {
+        "order_ref": "order-102",
+        "payment_id": "demo-pay-102",
+        "total": "37.00",
+        "currency": "USD",
+        "status": "cancelled"
+      }
+    ],
+    "report": {
+      "schema_version": 1,
+      "as_of": "2026-11-23T00:00:00+00:00",
+      "grace_hours": 24,
+      "payments_checked": 3,
+      "orders_in_export": 2,
+      "counts": {
+        "accepted_by_store": 1,
+        "no_order_in_export": 1,
+        "paid_order_cancelled_or_failed": 1
+      },
+      "findings": [
+        {
+          "payment_id": "demo-pay-102",
+          "order_ref": "order-102",
+          "outcome": "paid_order_cancelled_or_failed",
+          "order_status": "cancelled"
+        },
+        {
+          "payment_id": "demo-pay-103",
+          "order_ref": "order-103",
+          "outcome": "no_order_in_export",
+          "order_status": null
+        }
+      ]
+    }
+  },
+  "order_found": {
+    "payments": [
+      {
+        "payment_id": "demo-pay-101",
+        "order_ref": "order-101",
+        "captured_at": "2026-11-17T10:00:00Z",
+        "amount": "26.00",
+        "currency": "USD",
+        "refunded_amount": "0",
+        "disputed": "false"
+      },
+      {
+        "payment_id": "demo-pay-102",
+        "order_ref": "order-102",
+        "captured_at": "2026-11-17T11:00:00Z",
+        "amount": "37.00",
+        "currency": "USD",
+        "refunded_amount": "0",
+        "disputed": "false"
+      },
+      {
+        "payment_id": "demo-pay-103",
+        "order_ref": "order-103",
+        "captured_at": "2026-11-17T12:00:00Z",
+        "amount": "53.00",
+        "currency": "USD",
+        "refunded_amount": "0",
+        "disputed": "false"
+      }
+    ],
+    "orders": [
+      {
+        "order_ref": "order-101",
+        "payment_id": "demo-pay-101",
+        "total": "26.00",
+        "currency": "USD",
+        "status": "completed"
+      },
+      {
+        "order_ref": "order-102",
+        "payment_id": "demo-pay-102",
+        "total": "37.00",
+        "currency": "USD",
+        "status": "cancelled"
+      },
+      {
+        "order_ref": "order-103",
+        "payment_id": "demo-pay-103",
+        "total": "53.00",
+        "currency": "USD",
+        "status": "processing"
+      }
+    ],
+    "report": {
+      "schema_version": 1,
+      "as_of": "2026-11-23T00:00:00+00:00",
+      "grace_hours": 24,
+      "payments_checked": 3,
+      "orders_in_export": 3,
+      "counts": {
+        "accepted_by_store": 2,
+        "paid_order_cancelled_or_failed": 1
+      },
+      "findings": [
+        {
+          "payment_id": "demo-pay-102",
+          "order_ref": "order-102",
+          "outcome": "paid_order_cancelled_or_failed",
+          "order_status": "cancelled"
+        }
+      ]
+    }
+  },
+  "payment_refunded": {
+    "payments": [
+      {
+        "payment_id": "demo-pay-101",
+        "order_ref": "order-101",
+        "captured_at": "2026-11-17T10:00:00Z",
+        "amount": "26.00",
+        "currency": "USD",
+        "refunded_amount": "0",
+        "disputed": "false"
+      },
+      {
+        "payment_id": "demo-pay-102",
+        "order_ref": "order-102",
+        "captured_at": "2026-11-17T11:00:00Z",
+        "amount": "37.00",
+        "currency": "USD",
+        "refunded_amount": "37.00",
+        "disputed": "false"
+      },
+      {
+        "payment_id": "demo-pay-103",
+        "order_ref": "order-103",
+        "captured_at": "2026-11-17T12:00:00Z",
+        "amount": "53.00",
+        "currency": "USD",
+        "refunded_amount": "0",
+        "disputed": "false"
+      }
+    ],
+    "orders": [
+      {
+        "order_ref": "order-101",
+        "payment_id": "demo-pay-101",
+        "total": "26.00",
+        "currency": "USD",
+        "status": "completed"
+      },
+      {
+        "order_ref": "order-102",
+        "payment_id": "demo-pay-102",
+        "total": "37.00",
+        "currency": "USD",
+        "status": "cancelled"
+      }
+    ],
+    "report": {
+      "schema_version": 1,
+      "as_of": "2026-11-23T00:00:00+00:00",
+      "grace_hours": 24,
+      "payments_checked": 3,
+      "orders_in_export": 2,
+      "counts": {
+        "accepted_by_store": 1,
+        "no_order_in_export": 1,
+        "review_refund_or_dispute": 1
+      },
+      "findings": [
+        {
+          "payment_id": "demo-pay-102",
+          "order_ref": "order-102",
+          "outcome": "review_refund_or_dispute",
+          "order_status": "cancelled"
+        },
+        {
+          "payment_id": "demo-pay-103",
+          "order_ref": "order-103",
+          "outcome": "no_order_in_export",
+          "order_status": null
+        }
+      ]
+    }
+  }
+}

@@ -4,6 +4,10 @@
 
 ## Try the demo
 
+[Explore the three-payment sample in your browser](https://chaseakub.github.io/paid-order-check/). Select a payment to see the evidence. Switch scenarios to see how the findings change when a missing order arrives or a payment is refunded. The page uses synthetic inputs and reports produced by the Python checker.
+
+[![Explore the sample audit](docs/audit-preview.png)](https://chaseakub.github.io/paid-order-check/)
+
 Python 3.9 or later is required. From a checkout of this repository, run:
 
 ```sh

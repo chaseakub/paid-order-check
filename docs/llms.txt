@@ -1,0 +1,9 @@
+# Paid Order Check
+> Free, local order reconciliation for agents comparing captured Stripe payments with WooCommerce orders. The audit reads saved exports and returns JSON. It does not modify orders or payments.
+
+## Use
+- [Installable agent skill](https://skills.sh/chaseakub/paid-order-check/paid-order-audit)
+- [Skill instructions](https://raw.githubusercontent.com/chaseakub/paid-order-check/main/skills/paid-order-audit/SKILL.md)
+- [Machine-readable sample audits](https://chaseakub.github.io/paid-order-check/sample-audits.json): synthetic input records, checker counts, and findings for three scenarios.
+- [Supported fields and outcomes](https://github.com/chaseakub/paid-order-check/blob/main/skills/paid-order-audit/references/exports.md)
+- [Public pilot](https://github.com/chaseakub/paid-order-check/issues/new?template=pilot.yml): share aggregate feedback only.

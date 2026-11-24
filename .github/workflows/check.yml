@@ -12,6 +12,10 @@ jobs:
           python-version: '3.9'
       - run: python -m unittest discover -s tests
       - run: python skills/paid-order-audit/scripts/check_orders.py demo
+      - name: Verify published demo reports match the checker
+        run: |
+          python scripts/build_demo.py
+          git diff --exit-code -- docs/sample-audits.json
       - name: Verify project-local agent installation
         env:
           DISABLE_TELEMETRY: '1'
